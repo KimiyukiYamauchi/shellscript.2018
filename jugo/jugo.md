@@ -61,4 +61,38 @@
 - sudo find /etc -type f | wc -l
     - /etcディレクトリ以下のファイル数
 - sudo find /etc -type d | wc -l
-    - /etcディレクトリ以下のディレクトリ数
+    - /
+- 正規表現
+    - ^ => 行頭
+    - $ => 行末
+    - * => 直前の文字が0文字以上
+        - sed -n '/Bee*r/p'
+            - Bとrの間にeが１文字以上
+    - + => 直前の文字が1文字以上
+        - sed -n '/Bee+r/p'
+            - Bとrの間にeが２文字以上
+    - () => グループ化
+        - グループ化の体調は\1の形で置換文字側で参照
+- sed
+    - 行単位の処理
+    - sed 2,5d
+        - データの２から５行目を削除
+    - sed '3,$d'
+        - データの３から最終行を削除
+    - sed /^B/d
+        - 行頭がBの行を削除
+    - sed -n 1p
+        - 1行目だけ表示する
+    - sed 's/Beer/Whiskey/'
+        - BeerをWhiskeyに置き換え、ただし１行に１回
+    - sed 's/Beer/Whiskey/g'
+        - BeerをWhiskeyに置き換え、すべて
+    - sed 's/Be*r/Whiskey/g'
+        - Bとrの間に１文字以上のeがある文字列をWhiskeyに置き換え
+    - sed 's/!//g'
+        - !を削除
+    - sed -n 's/!//gp'
+        - !を削除した行のみを表示
+
+- awk
+    - 列(フィールド)単位の処理
