@@ -1,3 +1,41 @@
+- 7/6演習
+	- sysstatをインストール
+		- sudo apt install sysstat
+		- sudo vi /etc/defalt/sysstat
+			- false -> true
+		- sudo service sysstat start
+		- sar
+	- ポートの開閉を確認する
+		- sudo apt install nmap
+		- sudo nmap -sT -P0 -p 1-65535 192.168.33.10
+	- ファイアウォールの設定
+	- コマンド
+		- bash
+		- awk
+		- sed
+		- Open usp Tukubai
+			- sudo apt install unzip
+			- sudo apt install make
+			- wget --no-check-certificate https://github.com/\  
+			usp-engineers-community/Open-usp-Tukubai/archive/master.zip
+			- unzip master.zip
+			- cd Open-usp-Tukubai-master/
+			- sudo make install
+			- sudo apt install python
+			- self
+		- tree
+		- curl
+		- nkf
+	- Apache(Webサーバ)のインストール
+		- sudo apt install apache2
+
+
+- 6/29演習
+	- personal_infomation.csvから男女それぞれの人数を表示する
+	- personal_infomation.csvから男女それぞれの割合を表示する
+	- personal_infomation.csvから住所の都道府県の多い上位の５件を表示する
+	- ホームディレクトリ以下をアーカイブしてバックアップする
+
 - 6/22演習
 	- drink2.txtからBeerを削除、この時削除された行のみ表示。  
 	行番号も表示
