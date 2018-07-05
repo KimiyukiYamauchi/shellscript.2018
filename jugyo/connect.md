@@ -1,0 +1,2 @@
+- ssh接続
+	- ssh -i /home/application/vmd/ss/.vagrant/machines/default/virtualbox/private_key vagrant@192.168.33.10
