@@ -1,0 +1,6 @@
+#!/bin/bash -xv
+pagedir=$(dirname $0)/../pages
+remote=vagrant@192.168.33.10
+
+#ファイルアップロード
+rsync -av --delete --exclude '.*' -e 'ssh -i /home/application/vmd/unix1/.vagrant/machines/default/virtualbox/private_key' "$pagedir/" "$remote:/var/www/bashcms/pages/"
