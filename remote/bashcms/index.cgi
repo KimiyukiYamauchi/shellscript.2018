@@ -1,1 +1,1 @@
-index.6.cgi
+index.7.cgi
