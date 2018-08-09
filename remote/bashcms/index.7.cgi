@@ -45,6 +45,14 @@ filehame -lDOCUMENT $dir/template.7.html -        |
 mojihame -lNAVI_HEADER - $tmp-navi                |
 mojihame -lNAVI_FOOTER - $tmp-navi                |
 mojihame -lCATEGORIES - "$tmp-cs"                 |
-sed "s/@UPLOAD/$UPLOAD/"              
+sed "s/@UPLOAD/$UPLOAD/"
+
+# タイトルのキャッシュづくり
+head -n 1 "$dir/pages/$page/html" |
+sed -e 's;<h1>;;' -e 's;</h1>;;' |
+sed 's;_;\\_;g' |
+sed 's; ;_;g' |
+awk -v f="$page" '{gsub(/_/,"\\_",f);print f,$0}' > $tmp-t &&
+mv $tmp-t "$dir/cache/$page.title"
 
 rm $tmp-*
